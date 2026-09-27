@@ -2,7 +2,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useAuthStore } from "@/store/useAuthStore";
 import { useState } from "react";
 import ErrorDialog from "./ErrorDialog";
@@ -25,7 +25,7 @@ const SignUp = ({
   heading,
   logo = {
     url: "/",
-    src: "/logo.svg",
+    src: "/logo2.svg",
     alt: "logo",
     title: "Go to home",
   },
@@ -36,6 +36,7 @@ const SignUp = ({
 }: SignUpProps) => {
   const { setUser } = useAuthStore((state) => state);
 
+  const router = useRouter();
   const [state, setState] = useState({
     isLoading: false,
     isError: false,
@@ -52,7 +53,7 @@ const SignUp = ({
       await new Promise((resolve, reject) => setTimeout(reject, 3000));
       const token = crypto.randomUUID();
       setUser(token);
-      redirect("/");
+      router.replace("/");
     } catch (error) {
       setState((prev) => ({
         ...prev,

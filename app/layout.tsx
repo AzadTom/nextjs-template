@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/NavBar";
 import NavBarWrapper from "@/components/navbar/NavBarWrapper";
 import { Providers } from "@/providers/Providers";
+import LoginDialog from "@/components/auth/LoginDialog";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </NavBarWrapper>
           {children}
         </Providers>
+        <LoginDialog/>
       </body>
     </html>
   );
