@@ -16,7 +16,7 @@ const Demo = () => {
   };
 
   return (
-    <div className="flex gap-12">
+    <div className="flex flex-col gap-5 lg:flex-row lg:gap-12">
       {/* Image */}
       <div className="flex-1">
         <img
