@@ -2,6 +2,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import useReadmore, { ReadMoreProps } from "./useReadmore";
+import HightLightWrapper from "../HightLightWrapper";
 
 export default function ReadMore({
   text,
@@ -14,7 +15,8 @@ export default function ReadMore({
   const { textRef, expanded, setExpanded, isOverflowing } = useReadmore(text,lines);
 
   return (
-    <div className="w-full">
+    <HightLightWrapper title="ReadMore Component">
+      <div className="w-full">
       <p
         ref={textRef}
         data-status={status}
@@ -44,5 +46,6 @@ export default function ReadMore({
         </button>
       )}
     </div>
+    </HightLightWrapper>
   );
 }
