@@ -3,7 +3,7 @@ import Filters2 from "./Filters2";
 
 const FilterContainer = () => {
   return (
-    <div className="min-h-screen">
+    <div className="">
       {/* <Filters /> */}
       <Filters2 />
     </div>
