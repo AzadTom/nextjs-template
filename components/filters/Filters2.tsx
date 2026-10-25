@@ -3,6 +3,7 @@
 import { ChevronDown, Search, Settings2 } from "lucide-react";
 import { optionsList } from "./utils";
 import { useState } from "react";
+import HightLightWrapper from "../HightLightWrapper";
 
 const sortOptions = ["Recommended", "Newest", "Price: low to high", "Price: high to low", "Rating: low to high", "Rating: high to low"];
 
@@ -10,9 +11,10 @@ const Filters2 = () => {
   const [selectedFilter, setSelectedFilter] = useState<(typeof optionsList)[number] | null>(null);
 
   return (
-    <div className="mt-4 relative">
+    <HightLightWrapper title="Filter Component Flow">
+      <div className="mt-4 relative">
       <div className="border border-zinc-800 rounded-md flex items-center py-2 px-2">
-        <Search />
+       <Search />
         <input
           id="filter-search"
           type="search"
@@ -49,6 +51,7 @@ const Filters2 = () => {
         />
       )}
     </div>
+    </HightLightWrapper>
   );
 };
 
@@ -59,7 +62,8 @@ const BottomSheet = ({ title, data, onClose }: { title: string; data: string[]; 
 
     return (
         <div onClick={onClose} className="fixed inset-0 z-50 flex items-end bg-black/30">
-           <div onClick={(e)=>e.stopPropagation()} className="min-h-44 w-full bg-white border-t border-gray-200 rounded-t-xl py-2">
+           <HightLightWrapper title="BottomSheet Component">
+            <div onClick={(e)=>e.stopPropagation()} className="min-h-44 w-full bg-white border-t border-gray-200 rounded-t-xl py-2">
             <div className="px-4 py-2 font-medium">{title}</div>
             {data.map((item, index) => (
                <label className="flex items-center gap-2 px-4 py-2" key={index}>
@@ -70,6 +74,7 @@ const BottomSheet = ({ title, data, onClose }: { title: string; data: string[]; 
                </label>
             ))}
            </div> 
+           </HightLightWrapper>
         </div>
     )
 }

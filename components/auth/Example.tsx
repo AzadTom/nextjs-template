@@ -4,6 +4,8 @@
 import { MapPin, Star, Umbrella, Utensils, Wifi } from "lucide-react";
 import { useAuthStore } from "@/store/useAuthStore";
 import ReadMore from "../readmore/ReadMore";
+import { cn } from "cn";
+import HightLightWrapper from "../HightLightWrapper";
 
 const heroimg =
   "https://images.unsplash.com/photo-1789700537085-f6127b35ae33?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNnx8fGVufDB8fHx8fA%3D%3D";
@@ -20,7 +22,8 @@ const Example = () => {
   };
 
   return (
-    <div className="mt-4 flex flex-col gap-5 lg:flex-row lg:gap-12">
+    <HightLightWrapper title="Example of showing authentication flow.">
+      <div className={cn('mt-4 flex flex-col gap-5 lg:flex-row lg:gap-12')}>
       {/* Image */}
       <div className="flex-1">
         <img
@@ -117,6 +120,7 @@ const Example = () => {
         </div>
       </div>
     </div>
+    </HightLightWrapper>
   );
 };
 

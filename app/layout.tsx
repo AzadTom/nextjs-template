@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/NavBar";
 import NavBarWrapper from "@/components/navbar/NavBarWrapper";
 import { Providers } from "@/providers/Providers";
 import LoginDialog from "@/components/auth/LoginDialog";
+import HighLightButton from "@/components/HighLightButton";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -28,8 +29,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Navbar />
           </NavBarWrapper>
           {children}
-        </Providers>
         <LoginDialog/>
+        <HighLightButton/>
+        </Providers>
       </body>
     </html>
   );
